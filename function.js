@@ -64,13 +64,12 @@ function findMonth(day) {
     return "December";
   }
 }
-let midterm1 = 100;
-let midterm2 = 100;
-let final = 50;
+
 let month = findMonth(235);
 console.log(month);
 
 function avg(midterm1, midterm2, final) {
+  let avg = (midterm1 + midterm2 + final * 2)/4;
   if (60 > avg) {
     return "F";
   } else if (70 > avg) {
@@ -83,6 +82,8 @@ function avg(midterm1, midterm2, final) {
     return "A";
   }
 }
+let result = avg(100, 100, 50);
+console.log(result)
 
 let midterm1 = 100;
 let midterm2 = 100;
