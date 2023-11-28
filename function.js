@@ -36,6 +36,7 @@ function findDay(num) {
 let dayInText = findDay(2);
 console.log(dayInText);
 
+//find month
 function findMonth(day) {
   if (day >= 1 && day <= 31) {
     return "January";
@@ -63,32 +64,39 @@ function findMonth(day) {
     return "December";
   }
 }
+let midterm1 = 100;
+let midterm2 = 100;
+let final = 50;
 let month = findMonth(235);
 console.log(month);
 
-let day = 32;
-if (day >= 1 && day <= 31) {
-  console.log("January");
-} else if (day <= 59) {
-  console.log("February");
-} else if (day <= 90) {
-  console.log("March");
-} else if (day <= 120) {
-  console.log("April");
-} else if (day <= 151) {
-  console.log("May");
-} else if (day <= 181) {
-  console.log("June");
-} else if (day <= 212) {
-  console.log("July");
-} else if (day <= 243) {
-  console.log("August");
-} else if (day <= 273) {
-  console.log("September");
-} else if (day <= 304) {
-  console.log("October");
-} else if (day <= 334) {
-  console.log("November");
-} else if (day <= 365) {
-  console.log("December");
-} else "error";
+function avg(midterm1, midterm2, final) {
+  if (60 > avg) {
+    return "F";
+  } else if (70 > avg) {
+    return "D";
+  } else if (80 > avg) {
+    return "C", avg;
+  } else if (90 > avg) {
+    return "B";
+  } else if (100 >= avg) {
+    return "A";
+  }
+}
+
+let midterm1 = 100;
+let midterm2 = 100;
+let final = 50;
+// let finalGrade= ( midterm1+midterm2+final)/3
+let finalGrade = (midterm1 + midterm2 + final * 2) / 4;
+if (60 > finalGrade) {
+  console.log("F");
+} else if (70 > finalGrade) {
+  console.log("D");
+} else if (80 > finalGrade) {
+  console.log("C", finalGrade);
+} else if (90 > finalGrade) {
+  console.log("B");
+} else if (100 >= finalGrade) {
+  console.log("A");
+}
