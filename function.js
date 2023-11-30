@@ -69,35 +69,27 @@ let month = findMonth(235);
 console.log(month);
 
 function avg(midterm1, midterm2, final) {
-  let avg = (midterm1 + midterm2 + final * 2)/4;
-  if (60 > avg) {
+  let sum = (midterm1 + midterm2 + final * 2) / 4;
+  if (60 > sum) {
     return "F";
-  } else if (70 > avg) {
+  } else if (70 > sum) {
     return "D";
-  } else if (80 > avg) {
-    return "C", avg;
-  } else if (90 > avg) {
+  } else if (80 > sum) {
+    return "C";
+  } else if (90 > sum) {
     return "B";
-  } else if (100 >= avg) {
+  } else if (100 >= sum) {
     return "A";
   }
 }
-let result = avg(100, 100, 50);
-console.log(result)
+let result = avg(100, 100, 100);
+console.log(result);
 
-let midterm1 = 100;
-let midterm2 = 100;
-let final = 50;
-// let finalGrade= ( midterm1+midterm2+final)/3
-let finalGrade = (midterm1 + midterm2 + final * 2) / 4;
-if (60 > finalGrade) {
-  console.log("F");
-} else if (70 > finalGrade) {
-  console.log("D");
-} else if (80 > finalGrade) {
-  console.log("C", finalGrade);
-} else if (90 > finalGrade) {
-  console.log("B");
-} else if (100 >= finalGrade) {
-  console.log("A");
-}
+// == string number hamaagu shalgan 11=="11"
+// === torloor ni shalgan
+//!= tentsehgui baih yum bol
+//>= tentsuu buyu ers ih
+//<=
+// && 2 zuil asuuhad hereglen gehdee hoyulaa unen baival true 
+//! NOT if its true -false  false-true
+// || return  "or"
