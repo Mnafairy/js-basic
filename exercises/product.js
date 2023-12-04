@@ -65,14 +65,13 @@ let products = [
   },
 ];
 
-for (let i = 0; i < products.length; i = i + 1) {
-  let changePrices = products[i].price * 0.9;
-  console.log(changePrices);
-}
+// for (let i = 0; i < products.length; i = i + 1) {
+//   let changePrices = products[i].price * 0.9;
+//   console.log(changePrices);
+// }
 
 for (let i = 0; i < products.length; i = i + 1) {
-  if ((products[i].category == "Electronics")) {
-    let selectBrand = products[i];
-    console.log(selectBrand);
+  if (products[i].category == "Electronics") {
+    console.log(products[i]);
   }
 }
