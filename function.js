@@ -118,6 +118,7 @@ let person = {
 console.log(person.email);
 
 //array indexeer damjuulj handana
+// [] -array
 let array = ['car', 'apple', 'pen', ['orange']];
 console.log(array[0]); //car
 console.log(array[1]); //apple
@@ -240,3 +241,23 @@ if (todayForecast.raining ||todayForecast.snowing){
   console.log("Take umbrella")
 };
 
+// object type 
+// variable, parameter,key  : value
+
+
+let display=[
+  {
+    brand:"LG",
+    inch:"23",
+    price: 20000,
+    year:"2022",
+  },
+  {
+    brand:"Samsung",
+    inch:"21",
+    price: 700,
+    year:"2023",
+  }
+];
+display[0].price= display[0].price*0,9;
+console.log(display);
