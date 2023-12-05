@@ -83,7 +83,7 @@ function avg(midterm1, midterm2, final) {
   }
 }
 let result = avg(100, 100, 100);
-console.log(result);
+console.log("Result",result);
 
 // == string number hamaagu shalgan 11=="11"
 // === torloor ni shalgan
@@ -99,7 +99,7 @@ console.log(result);
 // string= ''
 let counter = false;
 let string = 11;
-console.log(typeof string); //"boolean"
+console.log(typeof counter); //"boolean"
 // undefined utga onooj ogoogui baina
 // null -hooson
 
@@ -123,7 +123,7 @@ let array = ['car', 'apple', 'pen', ['orange']];
 console.log(array[0]); //car
 console.log(array[1]); //apple
 console.log(array[2]); //pen
-console.log(array[3][0]),array[0]l;
+console.log(array[3][0]);
 
 //city gedeg nertei array zarl
 // city ni dotroo 8 hotiin ner aguulna
@@ -231,6 +231,13 @@ if (loan.salary>=2000000 && loan.socialInsurance>0 && (loan.passport || loan.ide
 
 // ogogodson toog 5 bolon 11t hubaagddag eshiig tootsoh function bich
 // too 5d huvaagdan gehdee 11th huvaagdahgui
+function divided(a){
+  if (a%5==0 && a%11==0) {
+    return "can be divided by 5 and 11";
+  } else  return "NO";
+}
+let a =divided (110);
+console.log ("a",a);
 
 let todayForecast ={
   raining:true

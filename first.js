@@ -1,9 +1,9 @@
 // let-> declare a value
 // = -> assign a value
-// assignment - suulgaj uguh
+// assignment - suulgaj uguh  onooj uguh
 // "orgil" -> value
 // ; -> semi colon  end of the line
-//{} curly bracket
+//{} curly bracket , curly braces
 let firstName = "orgil";
 let myAge = 25;
 
@@ -30,7 +30,10 @@ console.log(answer);
 
 // declare a variable called "number1" and "number2" and assign a value
 // and print out sum of the two variables
-
+let number1=5;
+let number2=6;
+let sum= number1+number2;
+console.log(sum);
 
 //syntax error - js codingiin durmiin aldaa
 //reference error - hayag addressin aldaa  "C++ pointer"
@@ -52,14 +55,14 @@ if (myAge >= 21) {
   console.log("21 hursen");
 } else {
   console.log("21 hureegui");
-}
+};
 // tursun on sar console log deer nasiin bodoj gargaj irne
 let birthYear = 1998;
 let birthMonth = 4;
 let age = 2023 - birthYear;
-let month = 12 - birthMonth;
+let month = currentMonth<birthMonth;
 // let eligible = age>21;
-if (13 < birthMonth) 
+if (currentMonth 12>4 birthMonth)
 // if (age = age - 1;) {
 //   console.log("Can enter")
 // }
@@ -70,7 +73,7 @@ if (age >= 21) {
 }
 // data types 
 let number1 = 15; //number type  number only can do equations (all numbers negative positive decimal)
-let my String= "15" //string type  represent textual data (any character)
+let myString= "15" //string type  represent textual data (any character)
 let myBool= false; //boolean type  can contain only true or false
 
 console.log("number1=", number1);
@@ -148,6 +151,7 @@ let midterm2=100 ;
 let final=50 ;
 // let finalGrade= ( midterm1+midterm2+final)/3
 let finalGrade= (midterm1+ midterm2+ final*2)/4
+// let finalGrade=midterm1*0.25+midterm2*0.25+ final*0.5
 if (60>finalGrade){
   console.log("F")
 } else if (70>finalGrade){
@@ -159,6 +163,7 @@ if (60>finalGrade){
 } else if (100>=finalGrade){
   console.log("A")
 }
+
 // dun tootsoh program bichne.
 // 3n oor torliin dun taniulna ( midterm1, midterm2 ,final) dundaj dun tootsolno
 // hervee dundaj dun chine 60 s doosh avsan bold un chine F 
