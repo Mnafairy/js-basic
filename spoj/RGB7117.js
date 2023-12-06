@@ -1,5 +1,5 @@
 function grade(x) {
-  if (x > 89) {
+  if (x > 89 && x<=100) {
     return "A";
   } else if (x > 79) {
     return "B";
@@ -9,5 +9,5 @@ function grade(x) {
     return "D";
   } else return "F";
 }
-let answer = grade(70);
+let answer = grade(100);
 console.log("Answer", answer);
