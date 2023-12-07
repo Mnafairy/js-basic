@@ -1,5 +1,5 @@
 function secondNumb(x) {
-  return ((423 % 100) - 3) / 10;
+  return ((x % 100) - (x % 10)) / 10;
 }
 let answer = secondNumb(423);
 console.log("Answer", answer);

@@ -128,7 +128,7 @@ console.log(array[3][0]);
 //city gedeg nertei array zarl
 // city ni dotroo 8 hotiin ner aguulna
 // hot bolgoniig console.log ashiglasd hevlej haruulna
-let city=['Tokyo','New York',"Beijing",'Seoul','Sydney','Paris','Los Angeles','Wellington'];
+let city = ['Tokyo','New York',"Beijing",'Seoul','Sydney','Paris','Los Angeles','Wellington'];
 console.log(city[0]);
 console.log(city[1]);
 console.log(city[2]);
