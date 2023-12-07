@@ -76,6 +76,33 @@ let products = [
 ];
 // find most expensive
 // find one with less stock
+function findAboveAvg(prods) {
+  let avgPrice = 0;
+  let sumPrice = 0;
+  for (let i = 0; i < prods.length; i = i + 1) {
+    sumPrice = sumPrice + prods[i].price;
+  }
+  avgPrice = sumPrice / prods.length;
+  console.log(avgPrice);
+  console.log(sumPrice);
+
+  let filterdProd = [];
+  let count = 0;
+  for (let i = 0; i < prods.length; i++) {
+    if (prods[i].price > avgPrice) {
+      filterdProd[count] = prods[i];
+      count = count + 1;
+    }
+  }
+  return filterdProd;
+}
+let aboveAvg = findAboveAvg(products);
+console.log("AboveAvg", aboveAvg);
+///////
+function findAvg(prods) {
+  let avgPrice = 0;
+  return avgPrice;
+}
 
 let mostExpensive = products[0].price;
 function findMostExpensive() {
