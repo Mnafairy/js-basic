@@ -30,7 +30,3 @@ function incByTwo(a, b, c) {
 }
 incByTwo(10, 20, 2);
 
-for (let i = 10; i <= 20; i = i + 2) {
-  array[count] = i;
-  count = count + 1;
-}
