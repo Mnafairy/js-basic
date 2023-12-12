@@ -4,7 +4,7 @@ function sum(numb) {
     a = a + i;
   }
   console.log(a);
-}
+} 
 sum(10);
 
 
