@@ -90,5 +90,5 @@ let products = [
 // let onlyPrices = products.map((a) => a.price);
 // console.log(onlyPrices);
 
-let onlyName = products.map((a) => a.name);
-console.log(onlyName);
+// let onlyName = products.map((a) => a.name);
+// console.log(onlyName);
