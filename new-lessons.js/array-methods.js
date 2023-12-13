@@ -36,6 +36,6 @@ let evenArr = nums.filter((a) => {
 console.log("evenArr:", evenArr);
 
 filterByBrand("");
-filterByPrace(max, min);
+filterByPrice(max, min);
 // collect only prices and make an array
 // make an array that only contains products name

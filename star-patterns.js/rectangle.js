@@ -6,7 +6,7 @@ function drawSqr(size) {
   for (let j = 0; j < size; j++) {
     for (let i = 0; i < size; i++) {
       sqrStr += "*";
-      //   sqrStr = _sqrStr + "*";
+      // sqrStr = sqrStr + "*";
     }
     sqrStr += "\n";
   }
@@ -42,6 +42,7 @@ function drawLeftTri(size) {
   }
   console.log(triSqr);
 }
+drawLeftTri(5);
 function drawRightTri(size) {
   let triSqr = "";
   for (let i = 0; i < size; i++) {
@@ -57,16 +58,15 @@ function drawRightTri(size) {
 }
 drawRightTri(5);
 
-let num = 1234;
-let numStr = num + "";
-// let numStr = num.toString();
+// let num = 1234;
+// let numStr = num + "";
+// // let numStr = num.toString();
 
-let strNum = "123";
-let numFromStr = Number(strNum);
+// let strNum = "123";
+// let numFromStr = Number(strNum);
 
-let word = "hello world";
-for (let i = 0; i < word.length; i++) {
-  console.log(word[i]);
-  console.log(word.charAt(i));
-}
-
+// let word = "hello world";
+// for (let i = 0; i < word.length; i++) {
+//   console.log(word[i]);
+//   console.log(word.charAt(i));
+// }

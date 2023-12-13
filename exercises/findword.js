@@ -9,10 +9,11 @@ Mrs civil nay least means tried drift. Natural end law whether but and towards
 certain. Furnished unfeeling his sometimes see day promotion. Quitting informed 
 concerns can men now. Projection to or up conviction uncommonly delightful 
 continuing. In appetite ecstatic opinions hastened by handsome admitted.`;
-function findAlph() {
+
+function findAlph(input) {
   let count = 0;
   for (let i = 0; i < sentence.length; i++) {
-    if (sentence[i] ==  || sentence[i] == ) {
+    if (sentence[i] == input || sentence[i] == "A" ) {
       count++;
     }
   }
@@ -37,7 +38,15 @@ console.log(arr);
 
 let alphabets = `abcdefghijklmnopqrstuwxyz`;
 let chars = [4, 5, 6, 9];
-for (i = 0; i < sentence.length; i++) {}
+let count=0;
+for (i = 0; i < sentence.length; i++) {
+  for(let j=0 ;j<alphabets.length; j++) {
+    if(sentence.charAt(i)==alphabets.charAt(j))
+    count++;
+  }
+}
+console.log(count);
+
 
 //multidimensional array
 //google space lmfao
