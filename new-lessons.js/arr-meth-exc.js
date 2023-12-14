@@ -76,7 +76,6 @@ let filterByBrand = products.filter((a) => {
   return a.brand == "Apple";
 });
 console.log("filterByBrand", filterByBrand);
-
 products.sort((a, b) => a.price - b.price);
 // products.sort((a, b) => {
 //   return a.price - b.price;
@@ -84,14 +83,14 @@ products.sort((a, b) => a.price - b.price);
 console.log(products);
 
 let onlyPrices = products.map((a) => a.price);
-console.log("Prices",onlyPrices);
+console.log("Prices", onlyPrices);
 // let onlyPrices = products.map((a) => {
 //   return a.price;
 // });
 // console.log("Price", onlyPrices);
 
-let onlyName = products.map((a) => a.name);
-console.log(onlyName);
+// let onlyName = products.map((a) => a.name);
+// console.log(onlyName);
 
-onlyPrices.sort((a,b) => a-b);
+onlyPrices.sort((a, b) => a - b);
 console.log("sort by price", onlyPrices);

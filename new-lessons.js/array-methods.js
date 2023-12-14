@@ -23,7 +23,7 @@ nums[nums.length] = 100;
 // products.map(); !! cannot change main variable  returns new array
 let nums = [1, 2, 3, 4, 5, 1, 3, 1, 3];
 let newNums = nums.map((a) => {
-  if (a % 2 == 0) return 1;
+  if (a % 2 == 0) return a;
 });
 console.log(newNums);
 console.log(nums);
@@ -39,3 +39,6 @@ filterByBrand("");
 filterByPrice(max, min);
 // collect only prices and make an array
 // make an array that only contains products name
+
+
+// .reduce  //can only return one 

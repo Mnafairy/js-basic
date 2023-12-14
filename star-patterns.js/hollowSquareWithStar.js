@@ -12,23 +12,22 @@ function sqr(input) {
       } else {
         sqrStr += "*";
       }
-      
     }
     sqrStr += "\n";
   }
   console.log(sqrStr);
 }
 sqr(5);
-// only works when i and j are lesserthan and equal to input 
+// only works when i and j are lesserthan and equal to input
 // if (
-      //   i == 1 ||
-      //   i == input ||
-      //   j == 1 ||
-      //   j == input ||
-      //   i == j ||
-      //   j == input - i + 1
-      // ) {
-      //   sqrStr += "*";
-      // } else {
-      //   sqrStr += " ";
-      // } 
+//         i == 1 ||
+//         i == input ||
+//         j == 1 ||
+//         j == input ||
+//         i == j ||
+//         j == input - i + 1
+//       ) {
+//         sqrStr += "*";
+//       } else {
+//         sqrStr += " ";
+//       }
