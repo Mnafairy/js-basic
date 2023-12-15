@@ -42,3 +42,6 @@ filterByPrice(max, min);
 
 
 // .reduce  //can only return one 
+
+// open case method 
+// .join method 

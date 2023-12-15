@@ -149,25 +149,25 @@ const employees = [
 // let highPaidEmployeesByDepartment = employees.filter((a) => a.department == "Finance" && a.salary > 90000);
 // console.log(highPaidEmployeesByDepartment);
 
-// // Task 2 Find top performers employee
-// let filterByPerf = employees.filter((a) => a.performanceRating >= 4.8);
-// console.log(filterByPerf);
+// Task 2 Find top performers employee
+let filterByPerf = employees.filter((a) => a.performanceRating >= 4.8);
+console.log(filterByPerf);
 
-// const topPerformersReport = (employees, minRating) => {
-//   const topPerformers = employees
-//     .filter((employee) => employee.performanceRating >= minRating)
-//     .map(({ name, performanceRating }) => ({ name, performanceRating }));
-//   return topPerformers;
-// };
-// console.log(topPerformersReport(employees, 4.8));
+const topPerformersReport = (employees, minRating) => {
+  const topPerformers = employees
+    .filter((employee) => employee.performanceRating >= minRating)
+    .map(({ name, performanceRating }) => ({ name, performanceRating }));
+  return topPerformers;
+};
+console.log(topPerformersReport(employees, 4.8));
 
-// const positionByAverageSalary = (employee) => {
-//   let result = employees.map((employee) => {
-//     return {
-//       position: employee.position,
-//       salary: employee.salary,
-//     };
-//   });
-//   return result;
-// };
-// console.log(positionByAverageSalary(employees));
+const positionByAverageSalary = (employee) => {
+  let result = employee.map((a) => {
+    return {
+      position: a.position,
+      salary: a.salary,
+    };
+  });
+  return result;
+};
+console.log(positionByAverageSalary(employees));

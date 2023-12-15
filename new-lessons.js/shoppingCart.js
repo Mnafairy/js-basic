@@ -36,15 +36,23 @@ let discountedPrice = shoppingCartItems.map((a) => {
   };
 });
 console.log(discountedPrice);
-//2
+// //2
 let moreQuantity = discountedPrice.filter((a) => a.quantity > 2);
 console.log(moreQuantity);
 //3
+function discAvg(dat, compAvg) {
+  let sumPrice = 0;
+  let priceAvg = 1;
+  dat.map((a) => (sumPrice = sumPrice + a.price * 0.9));
+  priceAvg = sumPrice / dat.length;
+  let result = dat.filter(
+    (b = b.price <= priceAvg),
+    dat.map((c) => {
+      return c.dat;
+    })
+  );
+  return result;
+}
+console.log(discAvg(shoppingCartItems, `avarageLess`));
 
-// };
-// console.log(productsCost(constshoppingCartItems));
-
-// task write a function calculateCategoryCosts return a object of {​​​​​​​​​​​​name: name, totalcost:???}​​​​​​​​​​​​
-// calculate discount price by 10% {name, price, quantity}
-// Discounttai product uud deer 2 oos deesh quantity tai product uudiig gargaj ir
 // price iin dundaj aa olood ternees ih bolon baga buteegdhuunudig ol
