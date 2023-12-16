@@ -29,5 +29,3 @@ function incByTwo(a, b, c) {
   console.log(array);
 }
 incByTwo(10, 20, 2);
-
-fasdfeg greg

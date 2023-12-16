@@ -153,13 +153,13 @@ const employees = [
 let filterByPerf = employees.filter((a) => a.performanceRating >= 4.8);
 console.log(filterByPerf);
 
-const topPerformersReport = (employees, minRating) => {
-  const topPerformers = employees
-    .filter((employee) => employee.performanceRating >= minRating)
-    .map(({ name, performanceRating }) => ({ name, performanceRating }));
-  return topPerformers;
-};
-console.log(topPerformersReport(employees, 4.8));
+// const topPerformersReport = (employees, minRating) => {
+//   const topPerformers = employees
+//     .filter((employee) => employee.performanceRating >= minRating)
+//     .map(({ name, performanceRating }) => ({ name, performanceRating }));
+//   return topPerformers;
+// };
+// console.log(topPerformersReport(employees, 4.8));
 
 const positionByAverageSalary = (employee) => {
   let result = employee.map((a) => {
