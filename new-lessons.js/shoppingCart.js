@@ -26,7 +26,7 @@ const shoppingCartItems = [
   { name: "Desk Chair", price: 120, quantity: 1, category: "Furniture" },
 ];
 
-//1
+// 1
 let discountedPrice = shoppingCartItems.map((a) => {
   return {
     name: a.name,
@@ -36,10 +36,10 @@ let discountedPrice = shoppingCartItems.map((a) => {
   };
 });
 console.log(discountedPrice);
-// //2
+//2
 let moreQuantity = discountedPrice.filter((a) => a.quantity > 2);
 console.log(moreQuantity);
-//3
+// 3
 function discAvg(dat, compAvg) {
   let sumPrice = 0;
   let priceAvg = 1;

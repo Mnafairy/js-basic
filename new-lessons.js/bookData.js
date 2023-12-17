@@ -147,7 +147,7 @@ const bookData = [
 // find more than 20 length books
 // add summary on object by like this `A captivating book by ${book.author}.`
 
-//1
+// 1
 // function findExpPrice(input) {
 //   let answer = bookData.filter((a) => a.price > input);
 //   return answer;
@@ -172,14 +172,14 @@ const bookData = [
 // console.log(findMoreLength(20));
 
 //5
-// let addSummary = bookData.map((a) => {
-//   a.summary = a.author + " => " + a.title;
-//   return {
-//     summary: a.summary,
-//     rating: a.rating,
-//   };
-// });
-// console.log(addSummary);
+let addSummary = bookData.map((a) => {
+  a.summary = a.author + " => " + a.title;
+  return {
+    summary: a.summary,
+    rating: a.rating,
+  };
+});
+console.log(addSummary);
 
 //6
 function charLength(data, input) {

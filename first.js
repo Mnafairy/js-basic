@@ -6,7 +6,6 @@
 //{} curly bracket , curly braces
 let firstName = "orgil";
 let myAge = 25;
-
 // console.log -> ur dung hevleh command
 console.log(firstName);
 console.log(myAge);
