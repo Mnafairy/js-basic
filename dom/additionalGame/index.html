@@ -8,21 +8,25 @@
   </head>
   <body>
     <div id="container">
-      <div>
-        <label for="num1"></label>
-        <input type="text" name="num1" id="num1" />
+      <div class="labels">
+        <div>
+          <label for="num1"></label>
+          <input type="text" name="num1" id="num1" />
+        </div>
+        <div>
+          <label for="num2"></label>
+          <input type="text" name="num2" id="num2" />
+        </div>
+        <div>
+          <label for="sum"></label>
+          <input type="text" name="sum" id="sum" />
+        </div>
       </div>
-      <div>
-        <label for="num2"></label>
-        <input type="text" name="num2" id="num2" />
+      <div class="buttons">
+        <button onclick="sumN()">Test</button>
+        <button onclick="renew()">Renew</button>
       </div>
-      <div>
-        <label for="sum"></label>
-        <input type="text" name="sum" id="sum" />
-      </div>
-      <button onclick="sumN()">Test</button>
-      <button onclick="renew()">Renew</button>
-      <p id="result">result</p>
+      <!-- <p id="result">result</p> -->
     </div>
   </body>
   <script src="./script.js"></script>
