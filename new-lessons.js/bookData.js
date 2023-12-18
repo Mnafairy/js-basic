@@ -140,7 +140,12 @@ const bookData = [
     price: 17.99,
   },
 ];
-
+function charLength(data, input) {
+  let lengthMore = data.filter((a) => a.length > input);
+  lengthMore.sort((c, d) => c.price - d.price);
+  return lengthMore;
+}
+console.log(charLength(bookData, 10));
 // find Expensive book more than 12
 // find 12-18 priced range books
 // sort books by rating
