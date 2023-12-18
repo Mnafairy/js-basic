@@ -13,10 +13,11 @@ continuing. In appetite ecstatic opinions hastened by handsome admitted.`;
 function findAlph(input) {
   let count = 0;
   for (let i = 0; i < sentence.length; i++) {
-    if (sentence[i] == input || sentence[i] == "A" ) {
+    if (sentence[i] == input || sentence[i] == "A") {
       count++;
     }
   }
+  console.log(count);
 }
 findAlph("a");
 
@@ -33,20 +34,31 @@ for (let i = 0; i < sentence.length; i++) {
   }
 }
 console.log(arr);
+
+let arr = [];
+let str = "";
+let count = 0;
+for (let i = 0; i < sentence.length; i++) {
+  if (sentence[i] == " ") {
+    arr[count] = str;
+    count++;
+    str = "";
+  } else {
+    str = str + sentence[i];
+  }
+}
 // count how many a's in this text
 // toolson usegnuude heden shirheg baigaag haruulah
 
 let alphabets = `abcdefghijklmnopqrstuwxyz`;
 let chars = [4, 5, 6, 9];
-let count=0;
+let count = [];
 for (i = 0; i < sentence.length; i++) {
-  for(let j=0 ;j<alphabets.length; j++) {
-    if(sentence.charAt(i)==alphabets.charAt(j))
-    count++;
+  for (let j = 0; j < alphabets.length; j++) {
+    if (sentence.charAt(i) == alphabets.charAt(j)) count++;
   }
 }
 console.log(count);
-
 
 //multidimensional array
 //google space lmfao

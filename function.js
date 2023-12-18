@@ -13,6 +13,7 @@ function printHello() {
 function getSomething(input) {
   console.log("Input:", input);
 }
+getSomething(12);
 function returnSomething() {
   return "Hello World";
 }
@@ -98,7 +99,7 @@ console.log("Result",result);
 //primitive
 // string= ''
 let counter = false;
-let string = 11;
+let string = "awqe12";
 console.log(typeof counter); //"boolean"
 // undefined utga onooj ogoogui baina
 // null -hooson

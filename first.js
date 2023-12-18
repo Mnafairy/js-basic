@@ -24,7 +24,7 @@ console.log(division);
 
 // y=x*x + 2*x +1;
 let x = 5;
-let answer = x * x + 2 * x + 1;
+let answer = x * x + 2 * x + 1; 
 console.log(answer);
 
 // declare a variable called "number1" and "number2" and assign a value

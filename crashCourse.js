@@ -76,8 +76,17 @@ function foo(bar) {
   }
 }
 
-
 //  HOF- Higher order function
 // It takes one or more  functions as argument
-// It may return a function 
+// It may return a function
 
+function returnFn() {
+  return function () {
+    console.log("returning");
+  };
+}
+// console.log(returnFn());
+const fn = returnFn();
+fn();
+
+//pure function 

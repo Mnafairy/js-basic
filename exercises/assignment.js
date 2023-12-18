@@ -29,3 +29,14 @@ function incByTwo(a, b, c) {
   console.log(array);
 }
 incByTwo(10, 20, 2);
+
+// let newArray = [];
+// let count = 0;
+// const incByTwo = (a, b, c) => {
+//   for (let i = a; i < b; i = i + c) {
+//     newArray[count] = i;
+//     count = count + 1;
+//   }
+//   console.log(newArray);
+// };
+// incByTwo(10, 30, 3);
