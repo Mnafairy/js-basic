@@ -29,7 +29,9 @@ function numbGuesser() {
   }
 }
 function resetter() {
-  randomNumb = Math.floor(Math.random() * 100 + 1);
+  randomNumb = document.getElementById("rando").innerText = Math.floor(
+    Math.random() * 100 + 1
+  );
   document.getElementById("result").innerText = "";
   document.getElementById("num").value = "";
 }
