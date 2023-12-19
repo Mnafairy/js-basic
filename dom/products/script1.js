@@ -1,5 +1,3 @@
-// map ashilgaj medeelliig array ees hiine
-//append child ashiglaj root ruuge oruulna
 const products = [
   {
     name: "Laptop",
@@ -157,41 +155,40 @@ const products = [
       "Advanced electric toothbrush for thorough and effective dental care.",
   },
 ];
+/**
+ * <div id="cards">
+        <div class="card">
+          <img src="" alt="" />
+          <p class="cardName"></p>
+          <p></p>
+          <p></p>
+        </div>
+      </div>
+ */
 
 const root = document.getElementById("root");
+const cards = document.createElement("div");
+root.appendChild(cards);
+cards.setAttribute("class", "cards");
+
 function createCard(product) {
-  const cardDiv = document.createElement("div");
-  const cardImg = document.createElement("img");
-  const cardName = document.createElement("p");
-  const cardBrand = document.createElement("p");
-  const cardPrice = document.createElement("p");
-
-  cardDiv.setAttribute("class", "card");
-  cardImg.setAttribute("src", `${product.image_url}`);
-  cardName.setAttribute("class", "cName");
-
-  cardName.innerText = product.name;
-  cardBrand.innerText = product.brand;
-  cardPrice.innerText = product.price;
-
-  cardDiv.appendChild(cardImg);
-  cardDiv.appendChild(cardName);
-  cardDiv.appendChild(cardBrand);
-  cardDiv.appendChild(cardPrice);
-  root.appendChild(cardDiv);
-  return cardDiv;
+  const addCard = document.createElement("div");
+  const addImg = document.createElement("img");
+  const addName = document.createElement("p");
+  const addBrand = document.createElement("p");
+  const addPrice = document.createElement("p");
+  addName.innerText = product.name;
+  addBrand.innerText = product.brand;
+  addPrice.innerText = product.price;
+  addImg.setAttribute("src", `${product.image_url}`);
+  addName.setAttribute("class", "cardName");
+  addCard.setAttribute("class", "card");
+  addCard.appendChild(addImg);
+  addCard.appendChild(addName);
+  addCard.appendChild(addBrand);
+  addCard.appendChild(addPrice);
+  return addCard;
 }
-let print = products.map((i) => {
-  return root.appendChild(createCard(i));
+const print = products.map((i) => {
+  return cards.appendChild(createCard(i));
 });
-
-// const cardDiv = document.createElement("div");
-// const cardName = document.createElement("p");
-// cardDiv.setAttribute("class", "card");
-// cardName.innerText = products[0].name;
-// cardDiv.appendChild(cardName);
-// root.appendChild(cardDiv);
-
-// const arrElements = arr.map((prod) => {
-//   return `<div class> <p cass="prd_name> ${prod.name}</p></div>`;
-// });
