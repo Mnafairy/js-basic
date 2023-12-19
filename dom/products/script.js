@@ -193,5 +193,5 @@ let print = products.map((i) => {
 // root.appendChild(cardDiv);
 
 // const arrElements = arr.map((prod) => {
-//   return `<div class> <p cass="prd_name> ${prod.name}</p></div>`;
+//   return `<div class> <p class="prd_name> ${prod.name}</p></div>`;
 // });

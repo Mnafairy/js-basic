@@ -10,6 +10,12 @@ img {
 .card {
   height: 240px;
   width: 180px;
+  margin: 10px;
 }
-.card p {
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cardBot {
+  padding: 0px 10px;
 }

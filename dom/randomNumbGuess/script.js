@@ -32,6 +32,6 @@ function resetter() {
   randomNumb = document.getElementById("rando").innerText = Math.floor(
     Math.random() * 100 + 1
   );
-  document.getElementById("result").innerText = "";
+  document.getElementById("result").innerText = "Result";
   document.getElementById("num").value = "";
 }

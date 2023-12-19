@@ -29,6 +29,7 @@ console.log(newNums);
 console.log(nums);
 
 // products.filter(); !! checks if its true or false and returns true into array
+let nums = [1, 2, 3, 4, 5, 1, 3, 1, 3];
 let evenArr = nums.filter((a) => {
   //must be boolean
   return a % 2 == 0;
@@ -40,8 +41,7 @@ filterByPrice(max, min);
 // collect only prices and make an array
 // make an array that only contains products name
 
+// .reduce  //can only return one
 
-// .reduce  //can only return one 
-
-// open case method 
-// .join method 
+// open case method
+// .join method

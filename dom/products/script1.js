@@ -155,17 +155,6 @@ const products = [
       "Advanced electric toothbrush for thorough and effective dental care.",
   },
 ];
-/**
- * <div id="cards">
-        <div class="card">
-          <img src="" alt="" />
-          <p class="cardName"></p>
-          <p></p>
-          <p></p>
-        </div>
-      </div>
- */
-
 const root = document.getElementById("root");
 const cards = document.createElement("div");
 root.appendChild(cards);
@@ -177,6 +166,8 @@ function createCard(product) {
   const addName = document.createElement("p");
   const addBrand = document.createElement("p");
   const addPrice = document.createElement("p");
+  const addBottom = document.createElement("div");
+  addBottom.setAttribute("class", "cardBot");
   addName.innerText = product.name;
   addBrand.innerText = product.brand;
   addPrice.innerText = product.price;
@@ -184,9 +175,10 @@ function createCard(product) {
   addName.setAttribute("class", "cardName");
   addCard.setAttribute("class", "card");
   addCard.appendChild(addImg);
-  addCard.appendChild(addName);
-  addCard.appendChild(addBrand);
-  addCard.appendChild(addPrice);
+  addBottom.appendChild(addName);
+  addBottom.appendChild(addBrand);
+  addBottom.appendChild(addPrice);
+  addCard.appendChild(addBottom);
   return addCard;
 }
 const print = products.map((i) => {
