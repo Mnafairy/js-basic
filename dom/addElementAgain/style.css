@@ -17,6 +17,9 @@
   border: 1px solid black;
 }
 .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1px none;
   background: orange;
   width: 30px;
