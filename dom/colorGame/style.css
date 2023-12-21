@@ -4,19 +4,34 @@
   padding: 0;
 }
 #root {
+  margin-top: 20px;
+}
+button {
+  padding: 6px 15px;
+  border: none;
+  background-color: orange;
+  border-radius: 5px;
+}
+.header {
+  width: 500px;
+  margin: auto;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
+  margin-bottom: 50px;
 }
-.box {
-  margin: 10px;
-  width: 100px;
-  height: 100px;
-}
-#container {
+.boxes {
+  margin: auto;
+  width: 500px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 400px;
-  height: 400px;
+  gap: 5px;
+}
+.box {
+  width: 150px;
+  height: 150px;
+}
+.gameBody {
+  text-align: center;
 }
