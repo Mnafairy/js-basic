@@ -87,7 +87,7 @@ function startGame() {
   level.innerText = "Level " + levelC;
   chanceC = 3;
   chance.innerText = "Chance " + chanceC;
-  //   gameBody.innerHTML = "";
   boxes.innerHTML = "";
+  gameBody.innerHTML = "";
   addBoxes();
 }

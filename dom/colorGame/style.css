@@ -3,20 +3,28 @@
   margin: 0;
   padding: 0;
 }
+button {
+  padding: 5px 15px;
+  border: none;
+  background-color: orangered;
+}
 #root {
+  width: 500px;
+  margin: auto;
+  text-align: center;
+}
+.header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-around;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 .box {
-  margin: 10px;
-  width: 100px;
-  height: 100px;
-}
-#container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 400px;
-  height: 400px;
+  width: 150px;
+  height: 150px;
 }
