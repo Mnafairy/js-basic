@@ -46,6 +46,7 @@ function addBoxes() {
   const blue = Math.floor(Math.random() * 255);
   const randomColor = `rgb(${red}, ${green}, ${blue})`;
   const random = Math.floor(Math.random() * 8);
+
   for (i = 0; i < 9; i++) {
     let box = document.createElement("div");
     box.setAttribute("class", "box");
@@ -60,7 +61,7 @@ function addBoxes() {
     box.addEventListener("click", (e) => {
       let boxId = e.target.id;
       if (boxId == random) {
-        levelC = levelC + 1;
+        levelC ++;
         boxes.innerHTML = "";
         level.innerText = "Level " + levelC;
         if (levelC == 5) {
@@ -86,7 +87,7 @@ function startGame() {
   level.innerText = "Level " + levelC;
   chanceC = 3;
   chance.innerText = "Chance " + chanceC;
-  gameBody.innerHTML = "";
+//   gameBody.innerHTML = "";
   boxes.innerHTML = "";
   addBoxes();
 }
