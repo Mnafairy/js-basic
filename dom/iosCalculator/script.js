@@ -1,23 +1,46 @@
-const root = document.getElementById("root");
+const root = document.querySelector("#root");
+//container
 const container = document.createElement("div");
-container.setAttribute("id", "container");
+container.setAttribute("class", "container");
+//number
 const number = document.createElement("div");
-number.setAttribute("id", "result");
+number.setAttribute("class", "number");
+number.innerText = 0;
+//numpad
 const numpad = document.createElement("div");
-numpad.setAttribute("id", "numpad");
+numpad.setAttribute("class", "numpad");
+
 root.appendChild(container);
 container.appendChild(number);
 container.appendChild(numpad);
 
-function createNumpad() {
-  for (let i = 0; i < 19; i++) {
-    const pad = document.createElement("button");
-    pad.setAttribute("class", "pad");
-    pad.setAttribute("id", `pad${i}`);
-    numpad.appendChild(pad);
-  }
+let content = [
+  "AC",
+  "+/-",
+  "%",
+  "/",
+  "7",
+  "8",
+  "9",
+  "x",
+  "4",
+  "5",
+  "6",
+  "-",
+  "1",
+  "2",
+  "3",
+  "+",
+  "0",
+  ".",
+  "=",
+];
+for (let i = 0; i < content.length; i++) {
+  //button
+  const button = document.createElement("div");
+  button.setAttribute("class", "button");
+  button.setAttribute("id", i);
+  numpad.appendChild(button);
+  button.innerText = content[i];
+  button.addEventListener("click", () => {});
 }
-createNumpad();
-
-const ac = document.getElementById("pad0");
-ac.innerText = "";
