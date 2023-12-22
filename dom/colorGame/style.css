@@ -3,6 +3,11 @@
   margin: 0;
   padding: 0;
 }
+button {
+  padding: 5px 15px;
+  border: none;
+  background-color: orangered;
+}
 #root {
   margin-top: 20px;
 }
@@ -33,5 +38,8 @@ button {
   height: 150px;
 }
 .gameBody {
+  text-align: center;
+  width: 500px;
+  margin: auto;
   text-align: center;
 }
