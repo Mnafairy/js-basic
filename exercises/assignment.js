@@ -4,7 +4,6 @@ function down(x) {
     console.log(i);
   }
 }
-console.log(i);
 down(10);
 
 //2
