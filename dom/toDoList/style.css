@@ -1,15 +1,40 @@
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  height: 100vh;
+  background-image: url("https://c1.wallpaperflare.com/path/565/385/156/sunset-brook-green-meadow-june-df867360f0bed19da26bbb3838498c8f.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 #root {
-  width: 400px;
+  width: 1150px;
   margin: auto;
 }
-h1 {
-  margin: 30px;
+.boards {
+  display: flex;
+  justify-content: space-between;
+  padding: 120px;
 }
-button {
-  margin-left: 20px;
+.board {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 220px;
+  height: 100px;
+  background-color: #ebecf0;
+  border-radius: 10px;
+  padding: 15px 15px 5px 15px;
+}
+.boardHeader {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.addBtn {
+  display: flex;
+  gap: 20px;
 }
