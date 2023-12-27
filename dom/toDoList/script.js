@@ -1,37 +1,3 @@
-// const root = document.getElementById("root");
-// const title = document.createElement("h1");
-// title.innerText = "To-Do-List";
-// const taskContainer = document.createElement("div");
-// const input = document.createElement("input");
-// input.setAttribute("placeholder", "Enter task here...");
-// input.setAttribute("id", "");
-
-// const addButton = document.createElement("button");
-// addButton.innerText = "Add Task";
-// const botContainer = document.createElement("div");
-// botContainer.className = "botContainer";
-// root.appendChild(title);
-// root.appendChild(taskContainer);
-// root.appendChild(botContainer);
-// taskContainer.appendChild(input);
-// taskContainer.appendChild(addButton);
-// addButton.addEventListener("click", addTask);
-
-// function addTask() {
-//   const task = document.createElement("div");
-//   task.innerText = input.value;
-//   const deleteButton = document.createElement("button");
-//   deleteButton.innerText = "Delete";
-
-//   botContainer.appendChild(task);
-//   task.appendChild(deleteButton);
-//   deleteButton.addEventListener("click", deleted);
-
-//   function deleted() {
-//     task.remove();
-//   }
-// }
-
 /**
  * <div class="boards">
         <div class="board">
@@ -52,6 +18,21 @@ const root = document.getElementById("root");
 const boards = document.createElement("div");
 boards.className = "boards";
 root.appendChild(boards);
+// const modal = document.createElement("div");
+// modal.className = "modal";
+// modal.className = "hidden";
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+
+const openModal = function () {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
+const closeModal = function () {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+};
+overlay.addEventListener("click", closeModal);
 
 const boardTitle = [
   { title: "To do", id: "toDo" },
@@ -59,39 +40,40 @@ const boardTitle = [
   { title: "Stuck", id: "stuck" },
   { title: "Done", id: "done" },
 ];
+
 const addBoard = () => {
   // let titleArr = ["To do", "In progress", "Stuck", "Done"];
   // for (let i = 0; i < 4; i++) {
-  boardTitle.map((title) => {
+  boardTitle.map((e) => {
     const board = document.createElement("div");
     board.className = "board";
-    board.setAttribute("id", title.id);
-
     const boardHeader = document.createElement("div");
     boardHeader.className = "boardHeader";
     const headerTitle = document.createElement("h3");
+    headerTitle.innerText = e.title;
     // headerTitle.innerText = `${titleArr[i]}`;
-    headerTitle.innerText = title.title;
-
+    //count
     const count = document.createElement("span");
     count.className = "count";
     count.innerText = "0  ";
     boardHeader.appendChild(headerTitle);
     boardHeader.appendChild(count);
     board.appendChild(boardHeader);
-
+    //cards
     const cards = document.createElement("div");
     cards.className = "cards";
+    cards.setAttribute("id", e.id);
     board.appendChild(cards);
-
+    //addBtn
     const addBtn = document.createElement("div");
     addBtn.className = "addBtn";
     const addCard = document.createElement("div");
-    addCard.innerText = "+ Add card";
+    addBtn.addEventListener("click", openModal);
+    addCard.innerText =`+ Add card`;
     addBtn.appendChild(addCard);
     board.appendChild(addBtn);
-
-    const over = document.createElement("div");
+    //over
+    const over = document.createElement("div", openModal);
     over.className = "over";
     board.appendChild(over);
 
@@ -100,5 +82,3 @@ const addBoard = () => {
   // }
 };
 addBoard();
-
-addBtn("click");

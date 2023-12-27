@@ -7,7 +7,32 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="modal hidden">
+        <h2>Add Task</h2>
+        <p>Title</p>
+        <input type="text" id="title" />
+        <p>Description</p>
+        <input type="text" id="description" />
+        
+        <label name="status">Status</label>
+        <select name="status" id="status">
+          <option value="todo">To do</option>
+          <option value="inprogress">In progress</option>
+          <option value="stuck">Stuck</option>
+          <option value="done">Done</option>
+        </select>
+        <label name="priority">Priority</label>
+        <select name="priority" id="priority">
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+
+        <button type="submit">Add task</button>
+      </div>
+      <div class="overlay hidden"></div>
+    </div>
   </body>
   <script src="./script.js"></script>
 </html>
