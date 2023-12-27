@@ -18,7 +18,7 @@ function doSomething() {
   let count = 1;
   const myInterval = setInterval(() => {
     if (count > 3) {
-      clearInterval(myIn    terval);
+      clearInterval(myInterval);
       location.reload();
     }
     console.log(count);
