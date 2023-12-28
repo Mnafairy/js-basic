@@ -24,6 +24,7 @@ description.setAttribute("id", "description");
 const labelStat = document.createElement("label");
 labelStat.setAttribute("name", "status");
 labelStat.innerText = "Status";
+//selectStat
 const selectStat = document.createElement("select");
 selectStat.setAttribute("name", "status");
 selectStat.setAttribute("id", "status");
@@ -36,13 +37,14 @@ modal.appendChild(modalPa);
 modal.appendChild(description);
 modal.appendChild(labelStat);
 modal.appendChild(selectStat);
-
+//map for option
 boardTitle.map((e) => {
   const option = document.createElement("option");
   option.setAttribute("value", e.id);
   option.innerText = e.title;
   selectStat.appendChild(option);
 });
+
 const labelPrio = document.createElement("label");
 labelPrio.setAttribute("name", "priority");
 labelPrio.innerText = "Priority";
@@ -51,36 +53,60 @@ const selectPrio = document.createElement("select");
 selectPrio.setAttribute("name", "priority");
 selectPrio.setAttribute("id", "priority");
 modal.appendChild(selectPrio);
-
+//loop for priority
 const arrPrio = ["low", "medium", "high"];
 for (let i = 0; i < arrPrio.length; i++) {
   const option = document.createElement("option");
-  option.setAttribute("value", `${arrPrio[i]}`);
+  option.setAttribute("value", arrPrio[i]);
   option.innerText = arrPrio[i];
   selectPrio.appendChild(option);
 }
+//add task button
 const submitBtn = document.createElement("button");
-submitBtn.setAttribute("type", "submit");
+// submitBtn.setAttribute("type", "submit");
 submitBtn.innerText = "Add task";
 modal.appendChild(submitBtn);
+let newArr = [];
+let newObj = { title: title.value, description: description.value };
+newArr.push = newObj;
 
+submitBtn.addEventListener("click", () => {
+  newArr.map((e) => {
+    const details = document.createElement("div");
+    details.className = "details";
+    const h4 = document.createElement("h4");
+    h4.innerText = e.value;
+    const detailP = document.createElement("p");
+    detailP.innerText = e.description;
+    details.appendChild(h4);
+    details.appendChild(detailP);
+    let cards = document.querySelector(".cards");
+    cards.appendChild(details);
+  });
+  // closeModal();
+});
+
+//overlay
 const overlay = document.createElement("div");
 overlay.setAttribute("class", "overlay hidden");
 root.appendChild(overlay);
 root.appendChild(boards);
 
+//OpenModal function
 const openModal = function () {
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
 };
+//CloseModal function
 const closeModal = function () {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
-  title.value = "";
-  description.value = "";
+  // title.value = "";
+  // description.value = "";
 };
 overlay.addEventListener("click", closeModal);
 
+// creating 4 board
 const addBoard = () => {
   boardTitle.map((e) => {
     const board = document.createElement("div");
@@ -116,6 +142,5 @@ const addBoard = () => {
 
     boards.appendChild(board);
   });
-  // }
 };
 addBoard();
