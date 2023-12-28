@@ -50,36 +50,55 @@
  */
 const root = document.getElementById("root");
 const boards = document.createElement("div");
+boards.className = "boards";
 root.appendChild(boards);
 
-const board = document.createElement("div");
-board.className = "board";
+const boardTitle = [
+  { title: "To do", id: "toDo" },
+  { title: "In progress", id: "inProgress" },
+  { title: "Stuck", id: "stuck" },
+  { title: "Done", id: "done" },
+];
+const addBoard = () => {
+  // let titleArr = ["To do", "In progress", "Stuck", "Done"];
+  // for (let i = 0; i < 4; i++) {
+  boardTitle.map((title) => {
+    const board = document.createElement("div");
+    board.className = "board";
+    board.setAttribute("id", title.id);
 
-const boardHeader = document.createElement("div");
-boardHeader.className = "boardHeader";
-const headerTitle = document.createElement("h3");
-headerTitle.innerText = "To do";
-const count = document.createElement("span");
-count.className = "count";
-boardHeader.appendChild(headerTitle);
-boardHeader.appendChild(count);
-board.appendChild(boardHeader);
+    const boardHeader = document.createElement("div");
+    boardHeader.className = "boardHeader";
+    const headerTitle = document.createElement("h3");
+    // headerTitle.innerText = `${titleArr[i]}`;
+    headerTitle.innerText = title.title;
 
-const cards = document.createElement("div");
-cards.className = "cards";
-board.appendChild(cards);
+    const count = document.createElement("span");
+    count.className = "count";
+    count.innerText = "0  ";
+    boardHeader.appendChild(headerTitle);
+    boardHeader.appendChild(count);
+    board.appendChild(boardHeader);
 
-const addBtn = document.createElement("div");
-addBtn.className = "addBtn";
-const plus = document.createElement("i");
-plus.innerText = "+";
-const addCard = document.createElement("div");
-addCard.innerText = "Add card";
-addBtn.appendChild(plus);
-addBtn.appendChild(addCard);
-board.appendChild(addBtn);
+    const cards = document.createElement("div");
+    cards.className = "cards";
+    board.appendChild(cards);
 
-const over = document.createElement("div");
-over.className = "over";
-board.appendChild(over);
-boards.appendChild(board);
+    const addBtn = document.createElement("div");
+    addBtn.className = "addBtn";
+    const addCard = document.createElement("div");
+    addCard.innerText = "+ Add card";
+    addBtn.appendChild(addCard);
+    board.appendChild(addBtn);
+
+    const over = document.createElement("div");
+    over.className = "over";
+    board.appendChild(over);
+
+    boards.appendChild(board);
+  });
+  // }
+};
+addBoard();
+
+addBtn("click");
