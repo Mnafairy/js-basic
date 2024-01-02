@@ -70,12 +70,12 @@ let newArr = [];
 let newObj = { title: title.value, description: description.value };
 newArr.push = newObj;
 
-submitBtn.addEventListener("click", () => {
+function createCard(newArr) {
   newArr.map((e) => {
     const details = document.createElement("div");
     details.className = "details";
     const h4 = document.createElement("h4");
-    h4.innerText = e.value;
+    h4.innerText = e.title;
     const detailP = document.createElement("p");
     detailP.innerText = e.description;
     details.appendChild(h4);
@@ -83,8 +83,9 @@ submitBtn.addEventListener("click", () => {
     let cards = document.querySelector(".cards");
     cards.appendChild(details);
   });
-  // closeModal();
-});
+}
+submitBtn.addEventListener("click", createCard);
+// closeModal(););
 
 //overlay
 const overlay = document.createElement("div");
