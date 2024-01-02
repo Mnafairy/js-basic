@@ -62,9 +62,10 @@ for (let i = 0; i < arrPrio.length; i++) {
   selectPrio.appendChild(option);
 }
 //add task button
-const submitBtn = document.createElement("button");
+const submitBtn = document.createElement("input");
 // submitBtn.setAttribute("type", "submit");
-submitBtn.innerText = "Add task";
+submitBtn.setAttribute("type", "button");
+submitBtn.value = "Add task";
 modal.appendChild(submitBtn);
 let newArr = [];
 let newObj = { title: title.value, description: description.value };
