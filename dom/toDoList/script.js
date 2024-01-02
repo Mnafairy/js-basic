@@ -2,6 +2,11 @@ const root = document.getElementById("root");
 const boards = document.createElement("div");
 boards.className = "boards";
 
+let todo = [];
+let inProgress = [];
+let stuck = [];
+let done = [];
+
 const boardTitle = [
   { title: "To do", id: "toDo" },
   { title: "In progress", id: "inProgress" },
@@ -37,7 +42,8 @@ modal.appendChild(modalPa);
 modal.appendChild(description);
 modal.appendChild(labelStat);
 modal.appendChild(selectStat);
-//map for option
+
+//map for option dropdown
 boardTitle.map((e) => {
   const option = document.createElement("option");
   option.setAttribute("value", e.id);
@@ -67,26 +73,43 @@ const submitBtn = document.createElement("input");
 submitBtn.setAttribute("type", "button");
 submitBtn.value = "Add task";
 modal.appendChild(submitBtn);
-let newArr = [];
-let newObj = { title: title.value, description: description.value };
-newArr.push = newObj;
 
-function createCard(newArr) {
-  newArr.map((e) => {
+submitBtn.addEventListener("click", () => {
+  todo.push({
+    title: title.value,
+    description: description.value,
+    priority: selectPrio.value,
+  });
+  console.log(todo);
+  todo.map((e) => {
     const details = document.createElement("div");
     details.className = "details";
-    const h4 = document.createElement("h4");
-    h4.innerText = e.title;
+    const cardDesc = document.createElement("h4");
+    cardDesc.innerText = e.title;
+    // h4.innerText = title.value;
     const detailP = document.createElement("p");
     detailP.innerText = e.description;
-    details.appendChild(h4);
+    // detailP.innerText = description.value;
+    const deleteBtn = document.createElement("button");
+    deleteBtn.setAttribute("class", "deleteBtn");
+    deleteBtn.innerText = "X";
+    const editBtn = document.createElement("button");
+    editBtn.setAttribute("class", "editBtn");
+    editBtn.innerText = "edit";
+    const prio = document.createElement("div");
+    prio.setAttribute("class", "prio");
+    prio.innerText = e.priority;
+    details.appendChild(cardDesc);
     details.appendChild(detailP);
-    let cards = document.querySelector(".cards");
+    details.appendChild(prio);
+    details.appendChild(deleteBtn);
+    details.appendChild(editBtn);
+    let cards = document.querySelector("#toDo");
     cards.appendChild(details);
+
   });
-}
-submitBtn.addEventListener("click", createCard);
-// closeModal(););
+  // closeModal();
+});
 
 //overlay
 const overlay = document.createElement("div");
@@ -120,7 +143,7 @@ const addBoard = () => {
     //count
     const count = document.createElement("span");
     count.className = "count";
-    count.innerText = "0  ";
+    count.innerText = "0";
     boardHeader.appendChild(headerTitle);
     boardHeader.appendChild(count);
     board.appendChild(boardHeader);

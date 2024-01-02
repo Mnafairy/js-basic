@@ -87,3 +87,11 @@ body {
 .addBtn:hover {
   background-color: rgba(128, 128, 128, 0.263);
 }
+
+.prio {
+  display: inline-block;
+  border-radius: 10px;
+  padding: 1px 7px;
+  color: rgb(63, 63, 63);
+  border: 1px solid black;
+}

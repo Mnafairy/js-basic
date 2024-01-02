@@ -39,19 +39,19 @@ removeProd(3);
 
 // using filter
 function sellProd(prodName, stock) {
-  // const newArr = products.map((object) => {
-  //   if (object.name == prodName) {
-  //     object.stock = object.stock - stock;
-  //   }
-  //   return object;
-  // });
-  // console.log(newArr);
-    for (let i = 0; i < products.length; i++) {
-      products[i].name == prod
-        ? (products[i].stock = products[i].stock - stock)
-        : null;
-    } 
-    console.log(products);
+  const newArr = products.map((object) => {
+    if (object.name == prodName) {
+      object.stock = object.stock - stock;
+    }
+    return object;
+  });
+  console.log(newArr);
+    // for (let i = 0; i < products.length; i++) {
+    //   products[i].name == prod
+    //     ? (products[i].stock = products[i].stock - stock)
+    //     : null;
+    // } 
+    // console.log(products);
 }
 sellProd("iphone", 2);
 
