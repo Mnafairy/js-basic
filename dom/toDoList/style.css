@@ -95,3 +95,34 @@ body {
   color: rgb(63, 63, 63);
   border: 1px solid black;
 }
+
+.card {
+  display: flex;
+  align-items: center;
+  /* gap: 30px; */
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+.cardText {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.checkmark {
+  border: 1px solid black;
+  border-radius: 100%;
+  padding: 3px;
+}
+.deleteBtn {
+  border: 1px solid black;
+  border-radius: 100%;
+  padding: 3px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.editBtn {
+  border: 1px solid black;
+  border-radius: 100%;
+  padding: 3px;
+}
+

@@ -8,12 +8,13 @@ let stuck = [];
 let done = [];
 
 const boardTitle = [
-  { title: "To do", id: "toDo" },
+  { title: "To do", id: "todo" },
   { title: "In progress", id: "inProgress" },
   { title: "Stuck", id: "stuck" },
   { title: "Done", id: "done" },
 ];
 // creating modal for add task
+
 const modal = document.createElement("div");
 modal.setAttribute("class", "modal hidden");
 const h2 = document.createElement("h2");
@@ -75,40 +76,56 @@ submitBtn.value = "Add task";
 modal.appendChild(submitBtn);
 
 submitBtn.addEventListener("click", () => {
+  let cards = document.querySelector("#todo");
+  cards.innerHTML = "";
   todo.push({
     title: title.value,
     description: description.value,
     priority: selectPrio.value,
   });
+  document.querySelector(".count").innerText = `${todo.length}`;
+
   console.log(todo);
   todo.map((e) => {
-    const details = document.createElement("div");
-    details.className = "details";
-    const cardDesc = document.createElement("h4");
-    cardDesc.innerText = e.title;
-    // h4.innerText = title.value;
-    const detailP = document.createElement("p");
-    detailP.innerText = e.description;
-    // detailP.innerText = description.value;
-    const deleteBtn = document.createElement("button");
+    const card = document.createElement("div");
+    card.className = "card";
+    const checkmark = document.createElement("div");
+    checkmark.className = "checkmark";
+    const checkIcon = document.createElement("i");
+    checkIcon.setAttribute("class", "fa-solid fa-check fa-sm");
+    checkmark.appendChild(checkIcon);
+    const cardTxt = document.createElement("div");
+    cardTxt.className = "cardText";
+    const cardStatus = document.createElement("h4");
+    cardStatus.innerText = e.title;
+    const cardDesc = document.createElement("p");
+    cardDesc.innerText = e.description;
+    const rightDiv = document.createElement("div");
+    rightDiv.className = "rightBtn";
+    const deleteBtn = document.createElement("div");
     deleteBtn.setAttribute("class", "deleteBtn");
-    deleteBtn.innerText = "X";
-    const editBtn = document.createElement("button");
+    const deleteIcon = document.createElement("i");
+    deleteIcon.setAttribute("class", "fa-regular fa-x fa-xs");
+    deleteBtn.appendChild(deleteIcon);
+    const editBtn = document.createElement("div");
     editBtn.setAttribute("class", "editBtn");
-    editBtn.innerText = "edit";
+    const editIcon = document.createElement("i");
+    editIcon.setAttribute("class", "fa-solid fa-pen-to-square fa-sm");
+    editBtn.appendChild(editIcon);
     const prio = document.createElement("div");
     prio.setAttribute("class", "prio");
     prio.innerText = e.priority;
-    details.appendChild(cardDesc);
-    details.appendChild(detailP);
-    details.appendChild(prio);
-    details.appendChild(deleteBtn);
-    details.appendChild(editBtn);
-    let cards = document.querySelector("#toDo");
-    cards.appendChild(details);
-
+    card.appendChild(checkmark);
+    cardTxt.appendChild(cardStatus);
+    cardTxt.appendChild(cardDesc);
+    cardTxt.appendChild(prio);
+    card.appendChild(cardTxt);
+    rightDiv.appendChild(deleteBtn);
+    rightDiv.appendChild(editBtn);
+    card.appendChild(rightDiv);
+    cards.appendChild(card);
   });
-  // closeModal();
+  closeModal();
 });
 
 //overlay
@@ -126,8 +143,8 @@ const openModal = function () {
 const closeModal = function () {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
-  // title.value = "";
-  // description.value = "";
+  title.value = "";
+  description.value = "";
 };
 overlay.addEventListener("click", closeModal);
 
