@@ -46,10 +46,12 @@ modal.appendChild(selectStat);
 
 //map for option dropdown
 boardTitle.map((e) => {
+  // for (let i = 0; i < boardTitle.length; i++) {
   const option = document.createElement("option");
   option.setAttribute("value", e.id);
   option.innerText = e.title;
   selectStat.appendChild(option);
+  // }
 });
 
 const labelPrio = document.createElement("label");
@@ -60,6 +62,7 @@ const selectPrio = document.createElement("select");
 selectPrio.setAttribute("name", "priority");
 selectPrio.setAttribute("id", "priority");
 modal.appendChild(selectPrio);
+
 //loop for priority
 const arrPrio = ["low", "medium", "high"];
 for (let i = 0; i < arrPrio.length; i++) {
@@ -70,23 +73,40 @@ for (let i = 0; i < arrPrio.length; i++) {
 }
 //add task button
 const submitBtn = document.createElement("input");
-// submitBtn.setAttribute("type", "submit");
 submitBtn.setAttribute("type", "button");
 submitBtn.value = "Add task";
 modal.appendChild(submitBtn);
 
 submitBtn.addEventListener("click", () => {
-  let cards = document.querySelector("#todo");
-  cards.innerHTML = "";
-  todo.push({
-    title: title.value,
-    description: description.value,
-    priority: selectPrio.value,
-  });
-  document.querySelector(".count").innerText = `${todo.length}`;
+  // let cards = document.querySelector("#todo");
+  const board1 = document.getElementById("todo");
+  const board2 = document.getElementById("inProgress");
+  const board3 = document.getElementById("stuck");
+  const board4 = document.getElementById("done");
+  if (board1.value == "todo") {
+    todo.push({
+      title: title.value,
+      description: description.value,
+      priority: selectPrio.value,
+    });
+    render(todo);
+  }
+  if (board2.value == "inprogress") {
+    todo.push({
+      title: title.value,
+      description: description.value,
+      priority: selectPrio.value,
+    });
+    render(inProgress);
+  }
 
-  console.log(todo);
-  todo.map((e) => {
+  // document.querySelector(".count").innerText = `${todo.length}`;
+});
+
+function render(array) {
+  // const cards
+  cards.innerHTML = "";
+  array.map((e) => {
     const card = document.createElement("div");
     card.className = "card";
     const checkmark = document.createElement("div");
@@ -123,10 +143,11 @@ submitBtn.addEventListener("click", () => {
     rightDiv.appendChild(deleteBtn);
     rightDiv.appendChild(editBtn);
     card.appendChild(rightDiv);
+
     cards.appendChild(card);
   });
   closeModal();
-});
+}
 
 //overlay
 const overlay = document.createElement("div");
