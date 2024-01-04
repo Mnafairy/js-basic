@@ -45,37 +45,37 @@ let count = 0;
 //array dotor baigaa object uudiig status aar ni yalgaj card uusgene
 function renderTasks(list) {
   boards.innerHTML = "";
-  const addBoard = () => {
-    statusArr.map((e) => {
-      const board = document.createElement("div");
-      board.className = "board";
-      const boardHeader = document.createElement("div");
-      boardHeader.className = "boardHeader";
-      const headerTitle = document.createElement("h3");
-      headerTitle.innerText = e;
-      //count
-      const count = document.createElement("span");
-      count.className = "count" + e;
-      boardHeader.appendChild(headerTitle);
-      boardHeader.appendChild(count);
-      board.appendChild(boardHeader);
-      //cards
-      const cards = document.createElement("div");
-      cards.className = "cards";
-      cards.setAttribute("id", e);
-      board.appendChild(cards);
-      //addBtn
-      const addBtn = document.createElement("div");
-      addBtn.className = "addBtn";
-      const addCard = document.createElement("div");
-      addBtn.addEventListener("click", openModal);
-      addCard.innerText = `+ Add card`;
-      addBtn.appendChild(addCard);
-      board.appendChild(addBtn);
-      boards.appendChild(board);
-    });
-  };
-  addBoard();
+  // const addBoard = () => {
+  //   statusArr.map((e) => {
+  //     const board = document.createElement("div");
+  //     board.className = "board";
+  //     const boardHeader = document.createElement("div");
+  //     boardHeader.className = "boardHeader";
+  //     const headerTitle = document.createElement("h3");
+  //     headerTitle.innerText = e;
+  //     //count
+  //     const count = document.createElement("span");
+  //     count.className = "count" + e;
+  //     boardHeader.appendChild(headerTitle);
+  //     boardHeader.appendChild(count);
+  //     board.appendChild(boardHeader);
+  //     //cards
+  //     const cards = document.createElement("div");
+  //     cards.className = "cards";
+  //     cards.setAttribute("id", e);
+  //     board.appendChild(cards);
+  //     //addBtn
+  //     const addBtn = document.createElement("div");
+  //     addBtn.className = "addBtn";
+  //     const addCard = document.createElement("div");
+  //     addBtn.addEventListener("click", openModal);
+  //     addCard.innerText = `+ Add card`;
+  //     addBtn.appendChild(addCard);
+  //     board.appendChild(addBtn);
+  //     boards.appendChild(board);
+  //   });
+  // };
+  // addBoard();
   const taskTodo = list.filter((todo) => {
     return todo.status == "todo";
   });
@@ -109,7 +109,7 @@ function renderTasks(list) {
   addBtn.appendChild(addCard);
   board.appendChild(addBtn);
   boards.appendChild(board);
-  
+
   taskTodo.map((task) => {
     const newTask = createTask(task);
     cards.appendChild(newTask);
