@@ -37,10 +37,18 @@ body {
   /* color: #777; */
 }
 .modal input {
-  padding: 10px 12px;
   border: 1px solid #ddd;
-  border-radius: 5px;
   font-size: 16px;
+  width: 100%;
+  padding: 12px 15px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+select {
+  margin: 8px 0;
+  border-radius: 10px;
+  padding: 12px 10px;
 }
 .overlay {
   position: fixed;
@@ -97,17 +105,21 @@ body {
 }
 
 .card {
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid rgb(177, 171, 171);
   display: flex;
   align-items: flex-start;
   /* align-items: center; */
-  /* gap: 30px; */
-  justify-content: space-between;
+  /* gap: 55px; */
+  justify-content: space-around;
   margin-bottom: 10px;
 }
 .cardText {
+  font-size: 16px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
 }
 .checkmark {
   border: 1px solid black;

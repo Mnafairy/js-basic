@@ -3,6 +3,7 @@ const boards = document.createElement("div");
 boards.className = "boards";
 root.appendChild(boards);
 
+// add task darhad 5 key tei object uud ene array luu nemegdej baih
 let taskArr = [
   {
     title: "Task1",
@@ -40,21 +41,79 @@ let taskArr = [
     id: 5,
   },
 ];
-
+let count = 0;
+//array dotor baigaa object uudiig status aar ni yalgaj card uusgene
 function renderTasks(list) {
   boards.innerHTML = "";
-
+  const addBoard = () => {
+    statusArr.map((e) => {
+      const board = document.createElement("div");
+      board.className = "board";
+      const boardHeader = document.createElement("div");
+      boardHeader.className = "boardHeader";
+      const headerTitle = document.createElement("h3");
+      headerTitle.innerText = e;
+      //count
+      const count = document.createElement("span");
+      count.className = "count" + e;
+      boardHeader.appendChild(headerTitle);
+      boardHeader.appendChild(count);
+      board.appendChild(boardHeader);
+      //cards
+      const cards = document.createElement("div");
+      cards.className = "cards";
+      cards.setAttribute("id", e);
+      board.appendChild(cards);
+      //addBtn
+      const addBtn = document.createElement("div");
+      addBtn.className = "addBtn";
+      const addCard = document.createElement("div");
+      addBtn.addEventListener("click", openModal);
+      addCard.innerText = `+ Add card`;
+      addBtn.appendChild(addCard);
+      board.appendChild(addBtn);
+      boards.appendChild(board);
+    });
+  };
+  addBoard();
   const taskTodo = list.filter((todo) => {
     return todo.status == "todo";
   });
-  const todoStatusDiv = document.createElement("div");
-  todoStatusDiv.setAttribute("class", "board");
-
+  console.log(taskTodo);
+  // const todoStatusDiv = document.createElement("div");
+  // todoStatusDiv.setAttribute("class", "board");
+  const board = document.createElement("div");
+  board.className = "board";
+  const boardHeader = document.createElement("div");
+  boardHeader.className = "boardHeader";
+  const headerTitle = document.createElement("h3");
+  headerTitle.innerText = "To do";
+  //count
+  const countTodo = document.createElement("span");
+  countTodo.className = "count";
+  countTodo.innerText = taskTodo.length;
+  boardHeader.appendChild(headerTitle);
+  boardHeader.appendChild(countTodo);
+  board.appendChild(boardHeader);
+  //cards
+  const cards = document.createElement("div");
+  cards.className = "cards";
+  cards.setAttribute("id", "todo");
+  board.appendChild(cards);
+  //addBtn
+  const addBtn = document.createElement("div");
+  addBtn.className = "addBtn";
+  const addCard = document.createElement("div");
+  addBtn.addEventListener("click", openModal);
+  addCard.innerText = `+ Add card`;
+  addBtn.appendChild(addCard);
+  board.appendChild(addBtn);
+  boards.appendChild(board);
+  
   taskTodo.map((task) => {
     const newTask = createTask(task);
-
-    todoStatusDiv.appendChild(newTask);
-    boards.appendChild(todoStatusDiv);
+    cards.appendChild(newTask);
+    boards.appendChild(board);
   });
 
   const taskInProgress = list.filter((todo) => {
@@ -120,9 +179,6 @@ function createTask(task) {
   const deleteBtn = document.createElement("div");
   deleteBtn.setAttribute("class", "deleteBtn");
   deleteBtn.innerText = "X";
-  //   const deleteIcon = document.createElement("i");
-  //   deleteIcon.setAttribute("class", "fa-regular fa-x fa-xs");
-  //   deleteBtn.appendChild(deleteIcon);
   // edit button
   const editBtn = document.createElement("div");
   editBtn.setAttribute("class", "editBtn");
@@ -137,11 +193,11 @@ function createTask(task) {
   deleteBtn.addEventListener("click", (event) => {
     deleteTask(event.target.id);
   });
-  //edit button eventlistener
-  //   editBtn.setAttribute("id", `${task.id}`);
-  //   editBtn.addEventListener("click", (edit) => {
-  //     editTask(edit.target.id);
-  //   });
+  // edit button eventlistener
+  // editIcon.setAttribute("id", `${task.id}`);
+  // editIcon.addEventListener("click", (edit) => {
+  //   editTask(edit.target.id);
+  // });
 
   cardStatus.innerText = task.title;
   cardDesc.innerText = task.description;
@@ -164,12 +220,16 @@ function deleteTask(id) {
   });
   renderTasks(taskArr);
 }
-
 // function editTask(id) {
+//   openModal();
 //   taskArr = taskArr.map((task) => {
 //     if (task.id == id) {
 //       return {
 //         ...task,
+//         // title: title.value,
+//         // description: description.value,
+//         // status: selectStat.value,
+//         // priority: selectPrio.value,
 //       };
 //     } else {
 //       return task;
@@ -177,28 +237,30 @@ function deleteTask(id) {
 //   });
 //   renderTasks(taskArr);
 // }
+const closeModal = function () {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+  title.value = "";
+  description.value = "";
+};
+const openModal = function () {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
 
-renderTasks(taskArr);
-for (let i = 0; i < taskArr.length; i++) {}
-
-taskArr.push({
-//   title: ,
-  description: "task1",
-  status: "todo",
-  priority: "high",
-  id: `${i}`,
-});
-//modal creating
+// modal creating
 const modal = document.createElement("div");
 modal.setAttribute("class", "modal hidden");
 const h2 = document.createElement("h2");
 h2.innerText = "Add Task";
 const modalP = document.createElement("p");
 modalP.innerText = "Title";
+//title
 const title = document.createElement("input");
 title.setAttribute("id", "title");
 const modalPa = document.createElement("p");
 modalPa.innerText = "Description";
+//description
 const description = document.createElement("input");
 description.setAttribute("id", "description");
 const labelStat = document.createElement("label");
@@ -246,9 +308,27 @@ for (let i = 0; i < arrPrio.length; i++) {
   option.innerText = arrPrio[i];
   selectPrio.appendChild(option);
 }
+//overlay
+const overlay = document.createElement("div");
+overlay.setAttribute("class", "overlay hidden");
+root.appendChild(overlay);
+root.appendChild(boards);
+overlay.addEventListener("click", closeModal);
 //add task button
 const addBtn = document.createElement("input");
 addBtn.setAttribute("type", "button");
 addBtn.value = "Add task";
 modal.appendChild(addBtn);
 root.appendChild(modal);
+addBtn.addEventListener("click", () => {
+  count = count + 1;
+  taskArr.push({
+    title: title.value,
+    description: description.value,
+    status: selectStat.value,
+    priority: selectPrio.value,
+    id: count,
+  });
+  renderTasks(taskArr);
+});
+renderTasks(taskArr);
