@@ -75,7 +75,7 @@ select {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 240px;
+  width: 280px;
   height: fit-content;
   background-color: #ebecf0;
   border-radius: 10px;
@@ -91,6 +91,7 @@ select {
   cursor: pointer;
   padding: 10px 0px 10px 5px;
   border-radius: 5px;
+  margin-bottom: 10px;
 }
 .addBtn:hover {
   background-color: rgba(128, 128, 128, 0.263);
@@ -112,7 +113,7 @@ select {
   align-items: flex-start;
   /* align-items: center; */
   /* gap: 55px; */
-  justify-content: space-around;
+  justify-content: space-between;
   margin-bottom: 10px;
 }
 .cardText {

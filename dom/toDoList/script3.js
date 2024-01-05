@@ -41,45 +41,15 @@ let taskArr = [
     id: 5,
   },
 ];
+
 let count = 0;
+const statusArr = ["todo", "inprogress", "stuck", "done"];
 //array dotor baigaa object uudiig status aar ni yalgaj card uusgene
 function renderTasks(list) {
   boards.innerHTML = "";
-  // const addBoard = () => {
-  //   statusArr.map((e) => {
-  //     const board = document.createElement("div");
-  //     board.className = "board";
-  //     const boardHeader = document.createElement("div");
-  //     boardHeader.className = "boardHeader";
-  //     const headerTitle = document.createElement("h3");
-  //     headerTitle.innerText = e;
-  //     //count
-  //     const count = document.createElement("span");
-  //     count.className = "count" + e;
-  //     boardHeader.appendChild(headerTitle);
-  //     boardHeader.appendChild(count);
-  //     board.appendChild(boardHeader);
-  //     //cards
-  //     const cards = document.createElement("div");
-  //     cards.className = "cards";
-  //     cards.setAttribute("id", e);
-  //     board.appendChild(cards);
-  //     //addBtn
-  //     const addBtn = document.createElement("div");
-  //     addBtn.className = "addBtn";
-  //     const addCard = document.createElement("div");
-  //     addBtn.addEventListener("click", openModal);
-  //     addCard.innerText = `+ Add card`;
-  //     addBtn.appendChild(addCard);
-  //     board.appendChild(addBtn);
-  //     boards.appendChild(board);
-  //   });
-  // };
-  // addBoard();
   const taskTodo = list.filter((todo) => {
     return todo.status == "todo";
   });
-  console.log(taskTodo);
   // const todoStatusDiv = document.createElement("div");
   // todoStatusDiv.setAttribute("class", "board");
   const board = document.createElement("div");
@@ -108,7 +78,6 @@ function renderTasks(list) {
   addCard.innerText = `+ Add card`;
   addBtn.appendChild(addCard);
   board.appendChild(addBtn);
-  boards.appendChild(board);
 
   taskTodo.map((task) => {
     const newTask = createTask(task);
@@ -116,10 +85,10 @@ function renderTasks(list) {
     boards.appendChild(board);
   });
 
+  // debugger
   const taskInProgress = list.filter((todo) => {
     return todo.status == "inprogress";
   });
-
   const InProgressStatusDiv = document.createElement("div");
   InProgressStatusDiv.setAttribute("class", "board");
 
@@ -220,23 +189,23 @@ function deleteTask(id) {
   });
   renderTasks(taskArr);
 }
-// function editTask(id) {
-//   openModal();
-//   taskArr = taskArr.map((task) => {
-//     if (task.id == id) {
-//       return {
-//         ...task,
-//         // title: title.value,
-//         // description: description.value,
-//         // status: selectStat.value,
-//         // priority: selectPrio.value,
-//       };
-//     } else {
-//       return task;
-//     }
-//   });
-//   renderTasks(taskArr);
-// }
+  // function editTask(id) {
+  //   openModal();
+  //   taskArr = taskArr.map((task) => {
+  //     if (task.id == id) {
+  //       return {
+  //         ...task,
+  //         // title: title.value,
+  //         // description: description.value,
+  //         // status: selectStat.value,
+  //         // priority: selectPrio.value,
+  //       };
+  //     } else {
+  //       return task;
+  //     }
+  //   });
+  //   renderTasks(taskArr);
+  // }
 const closeModal = function () {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
@@ -281,7 +250,6 @@ modal.appendChild(selectStat);
 root.appendChild(modal);
 
 //map for option dropdown
-let statusArr = ["todo", "inprogress", "stuck", "done"];
 statusArr.map((e) => {
   // for (let i = 0; i < boardTitle.length; i++) {
   const option = document.createElement("option");
@@ -320,15 +288,22 @@ addBtn.setAttribute("type", "button");
 addBtn.value = "Add task";
 modal.appendChild(addBtn);
 root.appendChild(modal);
+
 addBtn.addEventListener("click", () => {
   count = count + 1;
-  taskArr.push({
-    title: title.value,
-    description: description.value,
-    status: selectStat.value,
-    priority: selectPrio.value,
-    id: count,
-  });
+  if (title.value == "" && description.value == "") {
+    null;
+  } else {
+    taskArr.push({
+      title: title.value,
+      description: description.value,
+      status: selectStat.value,
+      priority: selectPrio.value,
+      id: count,
+    });
+  }
+  closeModal();
   renderTasks(taskArr);
 });
+
 renderTasks(taskArr);
