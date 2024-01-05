@@ -169,6 +169,7 @@ const addBoard = () => {
     cards.className = "cards";
     cards.setAttribute("id", e.id);
     board.appendChild(cards);
+
     //addBtn
     const addBtn = document.createElement("div");
     addBtn.className = "addBtn";
