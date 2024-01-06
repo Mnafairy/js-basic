@@ -49,42 +49,42 @@ const openModal = function () {
 let count = 0;
 const statusArr = ["todo", "inprogress", "stuck", "done"];
 //array dotor baigaa object uudiig status aar ni yalgaj card uusgene
-const board = document.createElement("div");
-board.className = "board";
-const boardHeader = document.createElement("div");
-boardHeader.className = "boardHeader";
-const headerTitle = document.createElement("h3");
-headerTitle.innerText = "To do";
-//count
-const countTodo = document.createElement("span");
-countTodo.className = "count";
-// countTodo.innerText = taskTodo.length;
-boardHeader.appendChild(headerTitle);
-boardHeader.appendChild(countTodo);
-board.appendChild(boardHeader);
-//cards
-const cards = document.createElement("div");
-cards.className = "cards";
-cards.setAttribute("id", "todo");
-board.appendChild(cards);
-//addBtn
-const addBtn = document.createElement("div");
-addBtn.className = "addBtn";
-const addCard = document.createElement("div");
-addBtn.addEventListener("click", openModal);
-addCard.innerText = `+ Add card`;
-addBtn.appendChild(addCard);
-board.appendChild(addBtn);
 
 // const todoCard = document.querySelector("#todo");
 function renderTasks(list) {
   boards.innerHTML = "";
-  cards.innerHTML = "";
+  // cards.innerHTML = "";
   const taskTodo = list.filter((todo) => {
     return todo.status == "todo";
   });
   // const todoStatusDiv = document.createElement("div");
   // todoStatusDiv.setAttribute("class", "board");
+  const board = document.createElement("div");
+  board.className = "board";
+  const boardHeader = document.createElement("div");
+  boardHeader.className = "boardHeader";
+  const headerTitle = document.createElement("h3");
+  headerTitle.innerText = "To do";
+  //count
+  const countTodo = document.createElement("span");
+  countTodo.className = "count";
+  countTodo.innerText = taskTodo.length;
+  boardHeader.appendChild(headerTitle);
+  boardHeader.appendChild(countTodo);
+  board.appendChild(boardHeader);
+  //cards
+  const cards = document.createElement("div");
+  cards.className = "cards";
+  cards.setAttribute("id", "todo");
+  board.appendChild(cards);
+  //addBtn
+  const addBtn = document.createElement("div");
+  addBtn.className = "addBtn";
+  const addCard = document.createElement("div");
+  addBtn.addEventListener("click", openModal);
+  addCard.innerText = `+ Add card`;
+  addBtn.appendChild(addCard);
+  board.appendChild(addBtn);
   taskTodo.map((task) => {
     const newTask = createTask(task);
     cards.appendChild(newTask);
@@ -144,10 +144,10 @@ function renderTasks(list) {
   headerTitle2.innerText = "Stuck";
   //count
   const countStuck = document.createElement("span");
-  countInprogress.className = "count";
-  countInprogress.innerText = taskStuck.length;
+  countStuck.className = "count";
+  countStuck.innerText = taskStuck.length;
   boardHeader2.appendChild(headerTitle2);
-  boardHeader2.appendChild(countInprogress);
+  boardHeader2.appendChild(countStuck);
   board2.appendChild(boardHeader2);
   //cards
   const cards2 = document.createElement("div");
@@ -331,12 +331,10 @@ root.appendChild(modal);
 
 //map for option dropdown
 statusArr.map((e) => {
-  // for (let i = 0; i < boardTitle.length; i++) {
   const option = document.createElement("option");
   option.setAttribute("value", e);
   option.innerText = e;
   selectStat.appendChild(option);
-  // }
 });
 
 const labelPrio = document.createElement("label");
